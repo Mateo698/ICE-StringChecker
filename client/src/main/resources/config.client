@@ -1,0 +1,15 @@
+#
+# The client reads this property to create the reference to the
+# "hello" object in the server.
+#
+Checker.Proxy=SimpleChecker:default -p 8000
+
+#
+# Uncomment to use the WebSocket transports instead.
+#
+#Hello.Proxy=hello:ws -p 8000
+
+
+# Only listen on the ZeroTier's LIASOn1 interface by default.
+#
+Ice.Default.Host= localhost
