@@ -24,7 +24,7 @@ public class Client {
                 if (extraArgs.size() < 1) {
                     System.out.println("The system requires at least one positive integer");
                     System.out.println("Mateo Rada Arias A00368693");
-                    System.out.println("Santiago Arevalo ");
+                    System.out.println("Santiago Arevalo A00368494");
                 } else {
                     if (extraArgs.size() > 1) {
                         int number = 0;
