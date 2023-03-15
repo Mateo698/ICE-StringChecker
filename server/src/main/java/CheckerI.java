@@ -9,10 +9,20 @@ public class CheckerI implements Demo.Checker {
         try {
             UUID transformed = UUID.fromString(str);
         } catch (IllegalArgumentException e) {
+            System.out.print("\u001B[31m");
+            System.out.print("\u001B[1m");
             System.out.println(str+" INVALID REQUEST");
+            System.out.print("\u001B[0m");
+
             return 1;
         }
-        System.out.println("\033[0;32;40m"  +str+" VALID REQUEST" + "\033[0m");
+        System.out.print("\u001B[32m");
+
+        // Imprime la cadena en negrita
+        System.out.print("\u001B[1m");
+        System.out.println(str+" VALID REQUEST");
+        System.out.print("\u001B[0m");
+
 
         if(number <= 1){
             return 2;

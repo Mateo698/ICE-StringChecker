@@ -1,3 +1,7 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 import java.util.UUID;
 
 public class Client {
@@ -38,10 +42,34 @@ public class Client {
                             } else {
                                 //Aqui es el caso donde el segundo argumento es un numero y el
                                 //primero es un archivo
+                                Path filePath = Path.of(extraArgs.get(0));
+                                // Leer el contenido del archivo como una cadena
+                                try {
+                                    String content = Files.readString(filePath);
+                                    // Mostrar la cadena
+                                    System.out.println(checker.checkString(content, number));
+                                } catch (NoSuchFileException e) {
+                                    System.out.println("No such file/directory exists");
+                                }catch (IOException e) {
+                                    System.out.println("Invalid permissions.");
+                                }
+
                             }
                         } else {
                             //Aqui es el caso donde el primer argumento es un numero y el
                             //segundo es un archivo
+                            Path filePath = Path.of(extraArgs.get(1));
+                            // Leer el contenido del archivo como una cadena
+                            try {
+                                String content = Files.readString(filePath);
+                                // Mostrar la cadena
+                                System.out.println(checker.checkString(content, number));
+                            } catch (NoSuchFileException e) {
+                                System.out.println("No such file/directory exists");
+                            }catch (IOException e) {
+                                System.out.println("Invalid permissions.");
+                            }
+
                         }
                     } else {
                         int number = 0;
