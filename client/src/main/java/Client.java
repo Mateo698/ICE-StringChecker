@@ -32,7 +32,7 @@ public class Client {
                             number = Integer.parseInt(extraArgs.get(0));
                         } catch (NumberFormatException ignored) {
                         }
-                        if (number == 0) {
+                        if (number <= 0) {
                             try {
                                 number = Integer.parseInt(extraArgs.get(1));
                             } catch (NumberFormatException ignored) {
@@ -77,7 +77,7 @@ public class Client {
                             number = Integer.parseInt(extraArgs.get(0));
                         } catch (NumberFormatException ignored) {
                         }
-                        if (number == 0) {
+                        if (number <= 0) {
                             System.out.println("Invalid arguments");
                         } else {
                             //Este es el caso donde solo se ingresa un numero, generando el UUID de manera aleatoria
